@@ -10,7 +10,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
 mybatis-plus:
   configuration:
-    map-underscore-to-camel-case: true
+    map-underscore-to-camel-case:   true
     auto-mapping-behavior: full
   mapper-locations: classpath*:mapper/**/*Mapper.xml
 

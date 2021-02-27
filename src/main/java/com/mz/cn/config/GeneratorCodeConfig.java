@@ -63,7 +63,7 @@ public class GeneratorCodeConfig {
         PackageConfig pag = new PackageConfig();
 
         // 设置模块名
-        pag.setModuleName("mz");
+        pag.setModuleName("account");
         // 放在哪个包下
         pag.setParent("com.mz.cn");
         // 实体类包名
@@ -79,7 +79,7 @@ public class GeneratorCodeConfig {
         //== 策略配置 ==
         StrategyConfig teg = new StrategyConfig();
         // 要映射的表明
-        teg.setInclude("plan");
+        teg.setInclude("account");
         // 表明下划线转为驼峰
         teg.setNaming(NamingStrategy.underline_to_camel);
         // 列明下划线转驼峰
