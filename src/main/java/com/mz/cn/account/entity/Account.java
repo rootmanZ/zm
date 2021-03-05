@@ -1,17 +1,17 @@
 package com.mz.cn.account.entity;
 
-import com.baomidou.mybatisplus.enums.IdType;
-import java.util.Date;
-import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.enums.IdType;
-import com.baomidou.mybatisplus.activerecord.Model;
+
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author huanglin
@@ -41,13 +41,13 @@ public class Account extends Model<Account> {
     /**
      * 第二级平台名称
      */
-    @TableField("newt_platform")
-    private String newtPlatform;
+    @TableField("next_platform")
+    private String nextPlatform;
     /**
      * 创建时间
      */
     @TableField("creat_date")
-    private Date creatDate;
+    private LocalDateTime creatDate;
     /**
      * 修改时间
      */
@@ -66,6 +66,19 @@ public class Account extends Model<Account> {
      */
     private String salt;
 
+    /**
+     * 备注
+     */
+    private String remarks;
+
+
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
+    }
 
     public Integer getId() {
         return id;
@@ -99,19 +112,19 @@ public class Account extends Model<Account> {
         this.platform = platform;
     }
 
-    public String getNewtPlatform() {
-        return newtPlatform;
+    public String getNextPlatform() {
+        return nextPlatform;
     }
 
-    public void setNewtPlatform(String newtPlatform) {
-        this.newtPlatform = newtPlatform;
+    public void setNextPlatform(String nextPlatform) {
+        this.nextPlatform = nextPlatform;
     }
 
-    public Date getCreatDate() {
+    public LocalDateTime getCreatDate() {
         return creatDate;
     }
 
-    public void setCreatDate(Date creatDate) {
+    public void setCreatDate(LocalDateTime creatDate) {
         this.creatDate = creatDate;
     }
 
@@ -155,16 +168,17 @@ public class Account extends Model<Account> {
     @Override
     public String toString() {
         return "Account{" +
-        ", id=" + id +
-        ", account=" + account +
-        ", password=" + password +
-        ", platform=" + platform +
-        ", newtPlatform=" + newtPlatform +
-        ", creatDate=" + creatDate +
-        ", modifyDate=" + modifyDate +
-        ", statue=" + statue +
-        ", creator=" + creator +
-        ", salt=" + salt +
-        "}";
+                ", id=" + id +
+                ", account=" + account +
+                ", password=" + password +
+                ", platform=" + platform +
+                ", newtPlatform=" + nextPlatform +
+                ", creatDate=" + creatDate +
+                ", modifyDate=" + modifyDate +
+                ", statue=" + statue +
+                ", creator=" + creator +
+                ", salt=" + salt +
+                "remarks" + remarks +
+                "}";
     }
 }
