@@ -1,6 +1,6 @@
 package com.mz.cn.plan.service.impl;
 
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.mz.cn.plan.dao.PlanMapper;
 import com.mz.cn.plan.entity.Plan;
 import com.mz.cn.plan.service.IPlanService;
@@ -41,7 +41,7 @@ public class PlanServiceImpl extends ServiceImpl<PlanMapper, Plan> implements IP
      */
     @Override
     public void delPlanInfo(Plan plan) {
-        this.baseMapper.updateAllColumnById(plan);
+        this.baseMapper.updateById(plan);
     }
 
     /**

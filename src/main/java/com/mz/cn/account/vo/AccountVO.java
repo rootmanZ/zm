@@ -1,32 +1,16 @@
-package com.mz.cn.account.entity;
+package com.mz.cn.account.vo;
 
-
-
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.extension.activerecord.Model;
-
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
- * <p>
- *
- * </p>
- *
- * @author huanglin
- * @since 2021-02-26
+ * @Description <p></p>
+ * @Author: Huanglin
+ * @Date: 2021/3/8 11:41
+ * @Version 0.0.1
  */
-public class Account extends Model<Account> {
+public class AccountVO extends PageVO {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * 主键
-     */
-    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
     /**
      * 账号(用户名)
@@ -43,17 +27,14 @@ public class Account extends Model<Account> {
     /**
      * 第二级平台名称
      */
-    @TableField("next_platform")
     private String nextPlatform;
     /**
      * 创建时间
      */
-    @TableField("creat_date")
     private LocalDateTime creatDate;
     /**
      * 修改时间
      */
-    @TableField("modify_date")
     private Date modifyDate;
     /**
      * 是否有效
@@ -72,15 +53,6 @@ public class Account extends Model<Account> {
      * 备注
      */
     private String remarks;
-
-
-    public String getRemarks() {
-        return remarks;
-    }
-
-    public void setRemarks(String remarks) {
-        this.remarks = remarks;
-    }
 
     public Integer getId() {
         return id;
@@ -162,25 +134,11 @@ public class Account extends Model<Account> {
         this.salt = salt;
     }
 
-    @Override
-    protected Serializable pkVal() {
-        return this.id;
+    public String getRemarks() {
+        return remarks;
     }
 
-    @Override
-    public String toString() {
-        return "Account{" +
-                ", id=" + id +
-                ", account=" + account +
-                ", password=" + password +
-                ", platform=" + platform +
-                ", newtPlatform=" + nextPlatform +
-                ", creatDate=" + creatDate +
-                ", modifyDate=" + modifyDate +
-                ", statue=" + statue +
-                ", creator=" + creator +
-                ", salt=" + salt +
-                "remarks" + remarks +
-                "}";
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
     }
 }

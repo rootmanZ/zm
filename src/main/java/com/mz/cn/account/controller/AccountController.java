@@ -3,6 +3,7 @@ package com.mz.cn.account.controller;
 
 import com.mz.cn.account.entity.Account;
 import com.mz.cn.account.service.IAccountService;
+import com.mz.cn.account.vo.AccountVO;
 import com.mz.cn.plan.entity.Plan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -44,7 +45,7 @@ public class AccountController {
      * @param account
      */
     @RequestMapping(value = "/del", method = RequestMethod.POST)
-    void removeAccountInfo(@RequestBody Account account) {
+    void removeAccountInfo(@RequestBody AccountVO account) {
     }
 
     /**
@@ -52,8 +53,8 @@ public class AccountController {
      *
      * @param account
      */
-    @RequestMapping(value = "update", method = RequestMethod.POST)
-    void updateAccountInfo(@RequestBody Account account) {
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    void updateAccountInfo(@RequestBody AccountVO account) {
     }
 
     /**
@@ -61,9 +62,9 @@ public class AccountController {
      *
      * @return
      */
-    @RequestMapping(value = "list", method = RequestMethod.POST)
-    List<Plan> searchAccountInfoByPage() {
-        List<Plan> list = new ArrayList<>();
+    @RequestMapping(value = "/list", method = RequestMethod.POST)
+    List<Plan> searchAccountInfoByPage(AccountVO account) {
+        List list = new ArrayList<>();
         return list;
     }
 
@@ -73,7 +74,7 @@ public class AccountController {
      * @param account
      * @return
      */
-    @RequestMapping(value = "get", method = RequestMethod.POST)
+    @RequestMapping(value = "/get", method = RequestMethod.POST)
     Plan searchAccountInfo(Account account) {
         return null;
     }

@@ -1,7 +1,7 @@
 package com.mz.cn.plan.dao;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.mz.cn.plan.entity.Plan;
-import com.baomidou.mybatisplus.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
